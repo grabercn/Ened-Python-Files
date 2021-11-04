@@ -14,29 +14,32 @@
 # development and execution.
 #
 # A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
-# This program is a header template that will be used for 
-# all your python files the rest of the semester.
+# This program takes inputs for the intrinsic impedance
+# phase constant of two materials, as well as the amplitude of the incident wave.
+# It then uses these to calculate the incident, reflected, and transmitted angles
+# as well as the reflected and transmitted amplitudes.
 
 import math
 
-intrinsicImpedanceOne = float(input('Please enter the intrinsic impedance of material 1:'))
-phaseConstantOne = float(input("Please enter the phase constant of material 1:"))
-intrinsicImpedanceTwo = float(input("Please enter the intrinsic impedance of material 2:"))
-phaseConstantTwo = float(input("Please enter the phase constant of material 2:"))
-amplitudeIncidentWave = float(input("Please enter the amplitude of the incident wave (V/m):"))
+n1 = float(input('Please enter the intrinsic impedance of material 1:'))
+b1 = float(input("Please enter the phase constant of material 1:"))
+n2 = float(input("Please enter the intrinsic impedance of material 2:"))
+b2 = float(input("Please enter the phase constant of material 2:"))
+aiw = float(input("Please enter the amplitude of the incident wave (V/m):"))
 
-incidenceTheta = (math.asin(math.sqrt(((phaseConstantTwo**2)*((intrinsicImpedanceTwo**2)-(intrinsicImpedanceOne**2))/(((intrinsicImpedanceTwo**2)*(phaseConstantOne**2)-((intrinsicImpedanceOne**2)*(phaseConstantTwo**2))))))))
-incidenceAngle = (incidenceTheta*(180/math.pi))
+incidenceT = (math.asin(math.sqrt((b2**2*((n2**2)-(n1**2)))/(((n2**2)*(b1**2))-((n1**2)*(b2**2))))))
+incidenceA = (incidenceT*(180/math.pi))
 
-transmittedTheta = (math.acos((intrinsicImpedanceOne*math.cos((incidenceTheta)))/intrinsicImpedanceTwo)
-transmittedAngle = ((transmittedTheta)*(180/math.pi))
+transmittedT = (math.acos((n1*math.cos((incidenceT)))/n2))
+transmittedA = ((transmittedT)*(180/math.pi))
 
-reflectedAngle = incidenceAngle
+reflectedAngle = incidenceA
 
-reflectedAmplitude = (((intrinsicImpedanceTwo)*(math.cos(incidenceTheta)))-((intrinsicImpedanceOne*math.cos(transmittedTheta)))/((intrinsicImpedanceTwo)*(math.cos(incidenceTheta)))+((intrinsicImpedanceOne*math.cos(transmittedTheta)))*amplitudeIncidentWave)
+reflectedAmplitude = ((((n2)*(math.cos(incidenceT))))-((n1)*(math.cos(transmittedT))))/(((n2)*(math.cos(incidenceT)))+((n1)*(math.cos(transmittedT))))*(aiw)
+transmittedAmplitude = (((2)*(n2)*(math.cos(incidenceT)))/(((n2)*(math.cos(transmittedT)))+(n1)*(math.cos(incidenceT))))*(aiw)
 
-
-print('Incident Angle: {0:2f}'.formatformat (incidenceAngle))
-print('Reflected Angle: {0:2f}'.format (reflectedAngle))
-print('Transmitted Angle: {0:2f}'.format (transmittedAngle))
-print('Reflected Amplitude: {0:2f}'.format (reflectedAmplitude))
+print('Incident Angle: {0:.2f} degrees'.format (incidenceA))
+print('Reflected Angle: {0:.2f} degrees'.format (reflectedAngle))
+print('Transmitted Angle: {0:.2f} degrees'.format (transmittedA))
+print('Reflected Amplitude: {0:.2f} V/m'.format (reflectedAmplitude))
+print('Transmitted Amplitude: {0:.2f} V/m'.format (transmittedAmplitude))
