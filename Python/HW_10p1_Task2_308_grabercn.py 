@@ -25,15 +25,18 @@ intrinsicImpedanceTwo = float(input("Please enter the intrinsic impedance of mat
 phaseConstantTwo = float(input("Please enter the phase constant of material 2:"))
 amplitudeIncidentWave = float(input("Please enter the amplitude of the incident wave (V/m):"))
 
-#incidenceAngle = (math.sqrt(((phaseConstantTwo**2)*((intrinsicImpedanceTwo**2)-(intrinsicImpedanceOne**2))/(((intrinsicImpedanceTwo**2)*(phaseConstantOne**2)-((intrinsicImpedanceOne**2)*(phaseConstantTwo**2)))))))
-incidenceAngle = 41.56
+incidenceTheta = (math.asin(math.sqrt(((phaseConstantTwo**2)*((intrinsicImpedanceTwo**2)-(intrinsicImpedanceOne**2))/(((intrinsicImpedanceTwo**2)*(phaseConstantOne**2)-((intrinsicImpedanceOne**2)*(phaseConstantTwo**2))))))))
+incidenceAngle = (incidenceTheta*(180/math.pi))
 
-transmittedAngle = ((intrinsicImpedanceTwo*math.cos(incidenceAngle)))
+transmittedTheta = (math.acos((intrinsicImpedanceOne*math.cos((incidenceTheta)))/intrinsicImpedanceTwo)
+transmittedAngle = ((transmittedTheta)*(180/math.pi))
 
 reflectedAngle = incidenceAngle
 
+reflectedAmplitude = (((intrinsicImpedanceTwo)*(math.cos(incidenceTheta)))-((intrinsicImpedanceOne*math.cos(transmittedTheta)))/((intrinsicImpedanceTwo)*(math.cos(incidenceTheta)))+((intrinsicImpedanceOne*math.cos(transmittedTheta)))*amplitudeIncidentWave)
 
 
 print('Incident Angle: {0:2f}'.formatformat (incidenceAngle))
 print('Reflected Angle: {0:2f}'.format (reflectedAngle))
 print('Transmitted Angle: {0:2f}'.format (transmittedAngle))
+print('Reflected Amplitude: {0:2f}'.format (reflectedAmplitude))
