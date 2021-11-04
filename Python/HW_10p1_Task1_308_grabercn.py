@@ -1,12 +1,12 @@
 # Assignment Title (include Task number if applicable)
-# File: ACT_Python_HeaderTemplate_TeamXXX_UCusername.py 
-# Date:    Day Month Year
-# By:      Your Name
-# Section: Your Section
-# Team:    Your Team Number
+# File: HW_10p1_Task1_308_grabercn.py 
+# Date:    04 11 2021
+# By:      Christian Graber
+# Section: 022
+# Team:    308
 # 
 # ELECTRONIC SIGNATURE
-# Type in your name
+# Christian Graber
 #
 # The electronic signature above indicates the script
 # submitted for evaluation is my individual work, and I
