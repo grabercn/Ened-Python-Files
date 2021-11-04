@@ -25,4 +25,15 @@ intrinsicImpedanceTwo = float(input("Please enter the intrinsic impedance of mat
 phaseConstantTwo = float(input("Please enter the phase constant of material 2:"))
 amplitudeIncidentWave = float(input("Please enter the amplitude of the incident wave (V/m):"))
 
-brewsterAngle = sqrt(((phaseConstantTwo**2)*((intrinsicImpedanceTwo**2)-(intrinsicImpedanceOne**2))/(((intrinsicImpedanceTwo**2)*(phaseConstantOne**2)-((intrinsicImpedanceOne**2)*(phaseConstantTwo**2))))))
+#incidenceAngle = (math.sqrt(((phaseConstantTwo**2)*((intrinsicImpedanceTwo**2)-(intrinsicImpedanceOne**2))/(((intrinsicImpedanceTwo**2)*(phaseConstantOne**2)-((intrinsicImpedanceOne**2)*(phaseConstantTwo**2)))))))
+incidenceAngle = 41.56
+
+transmittedAngle = ((intrinsicImpedanceTwo*math.cos(incidenceAngle)))
+
+reflectedAngle = incidenceAngle
+
+
+
+print('Incident Angle: {0:2f}'.formatformat (incidenceAngle))
+print('Reflected Angle: {0:2f}'.format (reflectedAngle))
+print('Transmitted Angle: {0:2f}'.format (transmittedAngle))
