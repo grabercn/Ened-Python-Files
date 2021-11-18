@@ -25,12 +25,9 @@ while order==0:
 
 
 while (pScore1<winningScore or pScore2<winningScore):
-    sum = 0
-    input("Hit Enter When Ready")
-    print('--Current Scores--')
-    print(Pn1+": "+str(pScore1))
-    print(Pn2+": "+str(pScore2))
     
+    sum = 0
+    input("Hit Enter When Ready ")
     
     while(sum!=7):
         
@@ -45,10 +42,20 @@ while (pScore1<winningScore or pScore2<winningScore):
         if (order==1):
             print(Pn1+" rolled a"+str(roll)+" and a "+str(roll2))
             pScore1+=sum
-            order=2
         else:
             print(Pn2+" rolled a "+str(roll)+' and a '+str(roll2))
             pScore2+=sum
-            order=1
-        
-
+    
+    print('--Current Scores--')
+    print(Pn1+": "+str(pScore1))
+    print(Pn2+": "+str(pScore2))
+    
+    if order==1:
+        order=2
+    else: order=2
+    if pScore1>=winningScore:
+        print(Pn1+" wins the game!")
+        break
+    elif pScore2>=winningScore:
+        print(Pn2+" wins the game!")
+        break
