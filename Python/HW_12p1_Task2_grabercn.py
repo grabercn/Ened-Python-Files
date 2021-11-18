@@ -1,7 +1,9 @@
-import math
+import random
 
 int(input('Enter the Winning Score: '))
 str(input('Player Name 1: '))
 str(input('Player Name 2: '))
 
-math.randomint(0,1)
+diceP1 = random.randint(1,6)
+diceP2 = random.randint(1,6)
+
