@@ -1,3 +1,22 @@
+# HW 12.1 Task 1
+# File: HW_12p1_Task1_grabercn.py
+# Date:    18 11 2021
+# By:      Christian Graber
+# Section: 022
+# Team:    308
+# 
+# ELECTRONIC SIGNATURE
+# Christian Graber
+#
+# The electronic signature above indicates the script
+# submitted for evaluation is my individual work, and I
+# have a general understanding of all aspects of its
+# development and execution.
+#
+# A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
+# This program takes inputs for The initial velocity and Desired angle increment, and calulates the projectile's max height
+# as well as calculated time it would take for the projectile to hit the ground. This is repeated until the value of theta is not higher than 90.
+
 import math
 
 y=0

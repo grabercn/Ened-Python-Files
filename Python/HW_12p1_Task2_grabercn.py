@@ -1,3 +1,22 @@
+# HW 12 Task 2 
+# File: HW_12p1_Task2_grabercn.py
+# Date:    18 11 2021
+# By:      Christian Graber
+# Section: 022
+# Team:    308
+# 
+# ELECTRONIC SIGNATURE
+# Christian Graber
+#
+# The electronic signature above indicates the script
+# submitted for evaluation is my individual work, and I
+# have a general understanding of all aspects of its
+# development and execution.
+#
+# A BRIEF DESCRIPTION OF WHAT THE SCRIPT OR FUNCTION DOES
+# This program is a simulation of the game sevens, where 2 players roll 2 dice until the sum of the 2 dice equals seven, and add up all the sums to get a score.
+# The program then switches to the next player and has the player do the same thing. The first person to achieve or exceed the entered win score wins.
+
 import random
 
 winningScore = int(input('Enter the Winning Score: '))
@@ -40,7 +59,7 @@ while (pScore1<winningScore or pScore2<winningScore):
         
         
         if (order==1):
-            print(Pn1+" rolled a"+str(roll)+" and a "+str(roll2))
+            print(Pn1+" rolled a "+str(roll)+" and a "+str(roll2))
             pScore1+=sum
         else:
             print(Pn2+" rolled a "+str(roll)+' and a '+str(roll2))
